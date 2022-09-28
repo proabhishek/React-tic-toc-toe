@@ -2,7 +2,7 @@
 import { FaTimes,FaRegCircle, FaPen } from "react-icons/fa";
 
 const Icon = (props) => {
-     console.log(props)
+     // console.log(props)
      if(props.icon == "circle"){
           return <FaRegCircle />
      }

@@ -53,7 +53,7 @@ const App = () => {
 
     // playGame
     function playGame(index){
-         console.log("Clicked on index", index)
+        //  console.log("Clicked on index", index)
           if(winMessage){
                return toast("Game has already got over")
           }
@@ -63,7 +63,7 @@ const App = () => {
           else{
            tictactoeArray[index] =  isCross==true? "cross" : "circle"
            setIsCross(!isCross)
-           console.log(tictactoeArray[index])
+        //    console.log(tictactoeArray[index])
           }
           checkIsWinner()
     }
