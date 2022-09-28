@@ -5,12 +5,10 @@ import { useState } from "react"
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
-
+const tictactoeArray  = new Array(9).fill("")
 const App = () => {
-
-     const tictactoeArray  = new Array(9).fill("")
      const [isCross, setIsCross] = useState(true)
-     const [winMessage, setWinMessage] = useState("X is winner")
+     const [winMessage, setWinMessage] = useState("")
 
 
      //reset game
@@ -55,6 +53,7 @@ const App = () => {
 
     // playGame
     function playGame(index){
+         console.log("Clicked on index", index)
           if(winMessage){
                return toast("Game has already got over")
           }
@@ -64,12 +63,14 @@ const App = () => {
           else{
            tictactoeArray[index] =  isCross==true? "cross" : "circle"
            setIsCross(!isCross)
+           console.log(tictactoeArray[index])
           }
           checkIsWinner()
     }
 
     return (
-        <div>
+        <div class="app-body">
+             <ToastContainer  position="bottom-center" />
               <h1> Lets Play Tic Toc Toe Game</h1>  
               {winMessage?(
                  <div> 
@@ -79,7 +80,19 @@ const App = () => {
               ):(
                   <h2>{isCross==true?"Cross":"Circle"}'s Turn</h2>
               )}
+
+                <div className="container"> 
+                    {
+                    tictactoeArray.map((value, index)=>(
+                        <div className="item1" onClick={()=>playGame(index)}>
+                            <Icon icon={value}/>
+                        </div>
+                    ))
+                    }
+                </div>
+
         </div>
+
     );
 }
 

@@ -1,0 +1,12 @@
+.container{
+    display: grid;
+    grid-template-columns: 100px 100px 100px; 
+    grid-template-rows: 100px 100px 100px ;
+    grid-gap: 10px;
+}
+
+.container div{
+   background-color: rgb(238, 209, 20);
+   border: 1px solid rgb(11, 1, 1);
+   
+}
